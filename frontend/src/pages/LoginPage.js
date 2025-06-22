@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import axios from '../api/axios';
 import { useNavigate, Link } from 'react-router-dom';
 
@@ -9,13 +9,6 @@ export default function LoginPage() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 0.75;
-    }
-  }, []);
 
   const validate = () => {
     if (!username) return "Username is required";
@@ -48,13 +41,11 @@ export default function LoginPage() {
   return (
     <div className="fixed inset-0 flex flex-col items-center justify-center overflow-hidden">
       <video
-        ref={videoRef}
         autoPlay
         loop
         muted
         className="absolute w-full h-full object-cover z-0"
-        src="/video.mp4"
-        poster="/fallback.jpg"
+        src="https://pouch.jumpshare.com/preview/g2-vC_o6lhajL64yRAi2B3jZo95Qqe8zAUeDZWl1GQcP1_jaM4Dgm30ehi-3wQxe0dZdXhOBuxDDjTHF06EZlc8chyKP5yz9q6l60Cig504FJCDB8tIo3i8xsewSj0H9JtQUm5U4AvsJnO3MhSD4Q26yjbN-I2pg_cnoHs_AmgI.mp4"
       />
       <div className="absolute inset-0 bg-black bg-opacity-40 z-10" />
       <div className="relative z-30 flex flex-col items-center mb-8">
