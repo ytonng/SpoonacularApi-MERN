@@ -13,7 +13,7 @@ exports.searchRecipes = async (req, res) => {
     const response = await spoonacular.get('/recipes/complexSearch', {
       params: {
         query,
-        number: 12,
+        number: 1000,
         addRecipeInformation: true,
       },
     });
